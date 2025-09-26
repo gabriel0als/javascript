@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <button id="somar">clique aqui</button>
+    <ul class="lista">
+        
+    </ul>
+
+    <script>
+        let somar = document.querySelector('#somar')
+        let lista = document.querySelector('.lista')
+        let novoElemento
+        let contador = 0
+
+        somar.addEventListener('click', function() {
+            contador++
+            novoElemento = document.createElement('li')
+            novoElemento.innerText = 'item ' + contador
+            lista.appendChild(novoElemento)
+
+        })
+        </script>
+</body>
+</html>
