@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício 6</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .caixa {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(204, 201, 201);
+            padding: 10px;
+        }
+
+        button {
+            border-radius: 10px;
+            background-color: rgb(51, 51, 245);
+            color: white;
+            font-size: 20px;
+            height: 100%;
+            width: 50%;
+            transition: all 0.5s ease;
+        }
+
+        button:hover {
+            background-color: purple;
+        }
+    </style>
 </head>
 <body>
-    <h1>Gerador de nome de aventuras</h1>
-    <button>Gerar nome</button>
-    <p></p>
-
+    <div class="caixa">
+        <h1>Gerador de nome de aventuras</h1>
+        <button>Gerar nome</button>
+        <p></p>
+    </div>
 
     <script>
         let botao = document.querySelector('button')
@@ -31,7 +61,7 @@
             classeSorteado = classes[Math.floor(Math.random() * (classes.length - 1))]
             locationSorteado = locations[Math.floor(Math.random() * (locations.length - 1))]
 
-            nomeGerado.innerText = titles[titleSorteado] + ' ' + names[nameSorteado] + ' '
+            nomeGerado.innerText = titleSorteado + ' ' + nameSorteado + ', o ' + classeSorteado + ' de ' + locationSorteado
         })
         
     </script>
