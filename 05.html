@@ -6,6 +6,7 @@
     <title>Exercício 5</title>
 </head>
 <body>
+    <h1>Lista de itens</h1>
     <button id="somar">clique aqui</button>
     <ul class="lista">
         
@@ -14,13 +15,13 @@
     <script>
         let somar = document.querySelector('#somar')
         let lista = document.querySelector('.lista')
-        let novoElemento
         let contador = 0
 
         somar.addEventListener('click', function() {
+            let item = prompt("Informe o item")
             contador++
-            novoElemento = document.createElement('li')
-            novoElemento.innerText = 'item ' + contador
+            let novoElemento = document.createElement('li')
+            novoElemento.innerText = item
             lista.appendChild(novoElemento)
 
         })
