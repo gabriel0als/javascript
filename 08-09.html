@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8 e 9</title>
+    <style>
+        .tema-escuro {
+            background-color: rgb(44, 43, 43);
+            color: white;;
+        }
+    </style>
+</head>
+
+<body>
+    <label for=""> Digite chocolate ou flocos
+        <input type="text" placeholder="Digite aqui">
+    </label>
+    <p></p>
+    <button>Alterar tema</button>
+
+
+    <script>
+        const tema = document.querySelector("body")
+        let resposta = document.querySelector("input")
+        let texto = document.querySelector("p")
+        let botao = document.querySelector("button")
+
+
+        resposta.addEventListener("input", () => {
+            const valor = resposta.value
+
+
+            if (valor.length > 3) {
+                if (valor == "chocolate") {
+                    texto.innerText = "Eu amo sorvete de chocolate!"
+                } else if (valor == "flocos") {
+                    texto.innerText = "Ahh, mas meu favorito é chocolate..."
+                } else {
+                    texto.innerText = "Ahh, eu esperava um sabor de sorvete..."
+                }
+            } else {
+                texto.innerText = ""
+            }
+
+        });
+
+        if (localStorage.getItem("tema") === "tema-escuro") {
+            tema.classList.add("tema-escuro");
+        }
+
+        botao.addEventListener("click", () => {
+            tema.classList.toggle("tema-escuro")
+
+            if (tema.classList.contains("tema-escuro")) {
+                localStorage.setItem("tema", "tema-escuro");
+            } else {
+                localStorage.setItem("tema", "tema-claro");
+        }
+        })
+    </script>
+</body>
+
+</html>

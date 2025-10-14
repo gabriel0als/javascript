@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <h1>GALERIA DE FOTOS</h1>
+    <img src="https://picsum.photos/id/237/600/400" width="600" height="400" alt="">
+    <p></p>
+
+    <script>
+
+        const imagens = [
+            "https://picsum.photos/id/237/600/400",
+            "https://picsum.photos/id/238/600/400",
+            "https://picsum.photos/id/239/600/400",
+            "https://picsum.photos/id/240/600/400"
+        ];
+
+        let i = 0;
+        function trocarImagem() {
+            const imagem = document.querySelector("img")
+            const texto = document.querySelector("p")
+            imagem.src = imagens[i]
+            i++
+            texto.innerText = "imagem: " + i
+
+            if (i >= imagens.length) {
+                i = 0
+            }
+            setTimeout(trocarImagem, 5000)
+        }
+
+        trocarImagem()
+    </script>
+</body>
+</html>
